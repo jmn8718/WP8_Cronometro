@@ -1,0 +1,41 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Cronometro.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid x:Name="CronometroPanel" Grid.Row="1" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="113*"/>
+                <ColumnDefinition Width="115*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.75*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="textVuelta" Grid.Row="1" Margin="0,0,0,0" FontSize="35" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Vuelta" TextAlignment="Center" FontStyle="Italic"/>
+            <TextBlock x:Name="textVueltaCrono" Grid.Row="1" Margin="0,0,0,0" FontSize="35" HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="00:00.000" TextAlignment="Center"/>
+            <TextBlock x:Name="textRelojCrono" Grid.Row="2" Width="456" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,0,4,0" Text="00:00:00.000" TextAlignment="Center"/>
+            <Button x:Name="botonStartCrono" Content="START" Grid.Row="3" VerticalAlignment="Center" Grid.Column="1" Click="botonStartCrono_Click" Height="116" FontSize="40"/>
+            <Button x:Name="botonStopCrono" Content="STOP" Grid.Row="3" Click="botonStopCrono_Click" VerticalAlignment="Center" Height="116" FontSize="40"/>
+
+            <Button x:Name="botonResetCrono" Content="RESET" Grid.Row="4" Click="botonResetCrono_Click" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,22,2,21" FontSize="40" IsEnabled="False"/>
+            <Button x:Name="botonLapCrono" Content="VUELTA" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="30" Click="botonLapCrono_Click" IsEnabled="False" Grid.Row="1"/>
+
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>
